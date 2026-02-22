@@ -11,7 +11,8 @@
         <!-- Header -->
     <header>
         <div class="logo">
-            <img src="assets/Rhotas_Club_3D.png" alt="Rhotas Turismo">
+            <img src="assets/Logo Rhotas Bege .png" alt="Rhotas Turismo">
+            <img src="assets/Logo_PHD_VETOR.png" alt="PHD Sports" class="phd-logo">
         </div>
         <nav>
             <ul>
@@ -32,13 +33,12 @@
     <!-- Avião Animado -->
     <div class="airplane" id="airplane"></div>
 
-    <!-- Ícones Flutuantes de Turismo -->
-    <span class="luggage-icon float-slow" style="position: fixed; top: 20%; left: 5%; font-size: 2rem; z-index: 998;">🧳</span>
-    <span class="luggage-icon float" style="position: fixed; top: 40%; right: 8%; font-size: 2.5rem; z-index: 998;">✈️</span>
-    <span class="luggage-icon float-rotate" style="position: fixed; bottom: 20%; left: 10%; font-size: 2rem; z-index: 998;">🌴</span>
-
-    <!-- Hero Section -->
+<!-- Hero Section -->
     <section class="hero" id="home">
+        <!-- Ícones Flutuantes de Turismo -->
+        <span class="luggage-icon float-slow" style="position: absolute; top: 20%; left: 5%; font-size: 2rem; z-index: 998;">🧳</span>
+        <span class="luggage-icon float" style="position: absolute; top: 40%; right: 8%; font-size: 2.5rem; z-index: 998;">✈️</span>
+        <span class="luggage-icon float-rotate" style="position: absolute; bottom: 20%; left: 10%; font-size: 2rem; z-index: 998;">🌴</span>
         <div class="hero-content">
             <div class="hero-badge float-element">🎉 Exclusivo para Colaboradores PHD Sports & Franqueados</div>
             <h1>Você trabalha. <span class="shimmer-text">Você conquista.</span> Você viaja. 🧳✈️</h1>
@@ -92,7 +92,9 @@
     <section class="about" id="sobre">
         <div class="about-content">
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800" alt="Rhotas Turismo">
+                <div class="logo-showcase">
+                    <img src="assets/logobegeSimbolo.png" alt="Logo Rhotas" class="rhotas-logo-png">
+                </div>
             </div>
             <div class="about-text">
                 <h3>Quem é a Rhotas Turismo</h3>
@@ -101,19 +103,19 @@
                 <p>Somos conhecidos como a <strong>Netflix do Turismo</strong>, por democratizar o acesso a centenas de destinos com condições exclusivas e inteligência estratégica.</p>
                 <div class="about-features">
                     <div class="about-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>+10 anos de mercado</span>
+                        <i class="fas fa-check-circle counter-icon"></i>
+                        <span class="counter" data-target="10">0</span><span> anos de mercado</span>
                     </div>
                     <div class="about-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>800+ operadoras parceiras</span>
+                        <i class="fas fa-check-circle counter-icon"></i>
+                        <span class="counter" data-target="800">0</span><span>+ operadoras parceiras</span>
                     </div>
                     <div class="about-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>200 mil hospedagens</span>
+                        <i class="fas fa-check-circle counter-icon"></i>
+                        <span class="counter" data-target="200">0</span><span> mil hospedagens</span>
                     </div>
                     <div class="about-feature">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-check-circle counter-icon"></i>
                         <span>Atendimento 24/7</span>
                     </div>
                 </div>
@@ -121,8 +123,8 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits" id="beneficios">
+<!-- Benefits Section -->
+    <section class="benefits" id="beneficios" style="background: linear-gradient(135deg, rgba(47, 79, 62, 0.95), rgba(47, 79, 62, 0.9)), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920') center/cover;">
         <div class="section-header">
             <h2>🌟 Conheça seus Benefícios</h2>
             <p>Descontos de até 70% em hospedagens e turismo</p>
@@ -186,7 +188,6 @@
                     <h3>Ondas Praia Resort</h3>
                     <p class="location"><i class="fas fa-map-marker-alt"></i> Porto Seguro - BA</p>
                     <div class="resort-prices">
-                        <span class="price-old">De R$ 10.850,00</span>
                         <span class="price-new">Por R$ 2.500,00</span>
                     </div>
                 </div>
@@ -199,7 +200,6 @@
                     <h3>Porto 2 Life Resort</h3>
                     <p class="location"><i class="fas fa-map-marker-alt"></i> Muro Alto - Ipojuca - PE</p>
                     <div class="resort-prices">
-                        <span class="price-old">De R$ 9.830,00</span>
                         <span class="price-new">Por R$ 2.500,00</span>
                     </div>
                 </div>
@@ -212,7 +212,6 @@
                     <h3>Hot Beach Suites</h3>
                     <p class="location"><i class="fas fa-map-marker-alt"></i> Olímpia - SP</p>
                     <div class="resort-prices">
-                        <span class="price-old">De R$ 8.490,00</span>
                         <span class="price-new">Por R$ 1.890,00</span>
                     </div>
                 </div>
@@ -225,7 +224,6 @@
                     <h3>Laghetto Golden Resort</h3>
                     <p class="location"><i class="fas fa-map-marker-alt"></i> Gramado - RS</p>
                     <div class="resort-prices">
-                        <span class="price-old">De R$ 11.790,00</span>
                         <span class="price-new">Por R$ 2.890,00</span>
                     </div>
                 </div>
@@ -238,7 +236,6 @@
                     <h3>Buzios Beach Resort</h3>
                     <p class="location"><i class="fas fa-map-marker-alt"></i> Búzios - RJ</p>
                     <div class="resort-prices">
-                        <span class="price-old">De R$ 12.890,00</span>
                         <span class="price-new">Por R$ 3.790,00</span>
                     </div>
                 </div>
@@ -251,7 +248,6 @@
                     <h3>Solar Pedra da Ilha</h3>
                     <p class="location"><i class="fas fa-map-marker-alt"></i> Penha - SC</p>
                     <div class="resort-prices">
-                        <span class="price-old">De R$ 8.490,00</span>
                         <span class="price-new">Por R$ 2.500,00</span>
                     </div>
                 </div>
@@ -340,29 +336,35 @@
             <p>Condições especiais nos principais parques do Brasil</p>
         </div>
         <div class="parks-grid">
-            <div class="park-card">
-                <i class="fas fa-rocket"></i>
-                <h3>Beto Carrero World</h3>
+            <div class="park-card" style="background-image: url('https://images.unsplash.com/photo-1596436174051-41dfa2e4c607?w=600');">
+                <div class="park-overlay">
+                    <h3>Beto Carrero World</h3>
+                </div>
             </div>
-            <div class="park-card">
-                <i class="fas fa-water"></i>
-                <h3>Thermas dos Laranjais</h3>
+            <div class="park-card" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600');">
+                <div class="park-overlay">
+                    <h3>Thermas dos Laranjais</h3>
+                </div>
             </div>
-            <div class="park-card">
-                <i class="fas fa-smile"></i>
-                <h3>Hot Park</h3>
+            <div class="park-card" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600');">
+                <div class="park-overlay">
+                    <h3>Hot Park</h3>
+                </div>
             </div>
-            <div class="park-card">
-                <i class="fas fa-umbrella-beach"></i>
-                <h3>Beach Park</h3>
+            <div class="park-card" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600');">
+                <div class="park-overlay">
+                    <h3>Beach Park</h3>
+                </div>
             </div>
-            <div class="park-card">
-                <i class="fas fa-tint"></i>
-                <h3>Blue Park</h3>
+            <div class="park-card" style="background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600');">
+                <div class="park-overlay">
+                    <h3>Blue Park</h3>
+                </div>
             </div>
-            <div class="park-card">
-                <i class="fas fa-snowflake"></i>
-                <h3>Snowland</h3>
+            <div class="park-card" style="background-image: url('https://images.unsplash.com/photo-1483664852095-d6cc6870705d?w=600');">
+                <div class="park-overlay">
+                    <h3>Snowland</h3>
+                </div>
             </div>
         </div>
         <div class="promo-banner">

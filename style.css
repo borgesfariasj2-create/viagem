@@ -5,19 +5,27 @@
         }
 
         :root {
-            /* Nova paleta de cores - Verde Militar, Bege e Laranja */
-            --military-green: #4B5320;
-            --military-green-light: #5C6B28;
-            --military-green-dark: #3A4118;
-            --beige: #E8DCC4;
-            --beige-light: #F5EFE0;
-            --beige-dark: #D4C4A8;
+            /* Nova paleta de cores - #2F4F3E, #F5F5DC e Laranja */
+            --primary: #2F4F3E;
+            --primary-light: #3D6350;
+            --primary-dark: #1F3A2E;
+            --secondary: #F5F5DC;
+            --secondary-light: #FAF8F0;
+            --secondary-dark: #E8E4CE;
             --orange: #FF6B35;
             --orange-light: #FF8C5A;
             --dark: #1A1A2E;
             --light: #FFFFFF;
             --gray: #F8F9FA;
             --gold: #FFD700;
+            
+            /* Mantendo compatibilidade com variáveis antigas */
+            --military-green: #2F4F3E;
+            --military-green-light: #3D6350;
+            --military-green-dark: #1F3A2E;
+            --beige: #F5F5DC;
+            --beige-light: #FAF8F0;
+            --beige-dark: #E8E4CE;
         }
 
         html {
@@ -56,7 +64,7 @@
         }
 
         .logo img {
-            height: 100px;
+            height: 80px;
             max-width: 100%;
             margin: -10px 0;
         }
@@ -108,9 +116,9 @@
             transform: translateY(-2px);
         }
 
-        .cta-button {
+.cta-button {
             background: linear-gradient(135deg, var(--orange), var(--orange-light));
-            color: var(--beige);
+            color: white;
             padding: 12px 30px;
             border: none;
             border-radius: 50px;
@@ -128,9 +136,9 @@
         }
 
         /* Hero Section */
-        .hero {
+.hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, rgba(0, 180, 216, 0.9), rgba(0, 119, 182, 0.8)),
+            background: linear-gradient(135deg, rgba(47, 79, 62, 0.85), rgba(47, 79, 62, 0.7)),
                         url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920') center/cover;
             display: flex;
             align-items: center;
@@ -193,9 +201,9 @@
             display: inline-block;
         }
 
-        .btn-secondary:hover {
-            background: white;
-            color: var(--primary);
+.btn-secondary:hover {
+            background: var(--military-green);
+            color: white;
         }
 
         /* Quick Links */
@@ -215,8 +223,8 @@
             margin: 0 auto;
         }
 
-        .quick-link-card {
-            background: white;
+.quick-link-card {
+            background: #F5F5DC;
             padding: 25px 20px;
             border-radius: 15px;
             text-align: center;
@@ -224,7 +232,7 @@
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
-            color: var(--dark);
+            color: #2F4F3E;
         }
 
         .quick-link-card:hover {
@@ -234,13 +242,14 @@
 
         .quick-link-card i {
             font-size: 2rem;
-            color: var(--primary);
+            color: #2F4F3E;
             margin-bottom: 15px;
         }
 
         .quick-link-card h3 {
             font-size: 1rem;
             font-weight: 600;
+            color: #2F4F3E;
         }
 
         /* Section Styles */
@@ -286,12 +295,26 @@
 
         .about-image {
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            background: linear-gradient(135deg, var(--military-green) 0%, var(--military-green-light) 100%);
+            border-radius: 20px;
+            overflow: hidden;
         }
 
-        .about-image img {
+        .logo-showcase {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .rhotas-logo-about {
+            max-width: 350px;
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+            animation: float 4s ease-in-out infinite;
         }
 
         .about-image::before {
@@ -578,10 +601,17 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            min-height: 200px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .park-card:hover {
-            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-10px);
         }
 
@@ -592,6 +622,26 @@
 
         .park-card h3 {
             font-size: 1.1rem;
+        }
+
+        /* Park overlay styles */
+        .park-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+            width: 100%;
+            padding: 30px 20px 20px;
+            border-radius: 0 0 20px 20px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .park-overlay h3 {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 0;
         }
 
         .promo-banner {
@@ -881,7 +931,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 119, 182, 0.8);
+            background: rgba(47, 79, 62, 0.8);
         }
 
         .cta-content {
@@ -1152,13 +1202,13 @@
             }
         }
 
-        .airplane {
+.airplane {
             position: fixed;
             font-size: 3rem;
             color: var(--orange);
             z-index: 999;
             animation: flyAcross 20s linear infinite;
-            opacity: 0;
+            opacity: 1;
             pointer-events: none;
             filter: drop-shadow(0 5px 15px rgba(255, 107, 53, 0.5));
         }
@@ -1420,3 +1470,29 @@
                 background-position: 200% center;
             }
         }
+
+
+
+.logo .phd-logo {
+    height: 70px;
+    margin-left: 10px;
+}
+
+.rhotas-logo-png {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Logo sizes adjustment */
+.logo > img:first-child {
+    height: 100px;
+}
+
+/* Header adjustment for larger logo */
+header {
+    padding: 8px 5%;
+    align-items: center;
+}

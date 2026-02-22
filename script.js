@@ -1,4 +1,4 @@
-        // Scroll to top button
+// Scroll to top button
         window.addEventListener('scroll', function() {
             const scrollTop = document.querySelector('.scroll-top');
             if (window.pageYOffset > 300) {
@@ -69,3 +69,51 @@
                 airplane.style.animation = 'flyAcross 20s linear infinite';
             }
         }, 25000);
+
+        // Contador animado - mais lento e smooth
+        const counters = document.querySelectorAll('.counter');
+        const counterSpeed = 4000;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = counterSpeed;
+                const startTime = performance.now();
+
+                const updateCount = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    const easeOut = 1 - Math.pow(1 - progress, 3);
+                    const currentValue = Math.floor(target * easeOut);
+
+                    counter.innerText = currentValue;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                requestAnimationFrame(updateCount);
+            });
+        };
+
+        // Iniciar animação quando a seçãoAbout for visível
+        const aboutSection = document.querySelector('.about');
+        const counterObserverOptions = {
+            threshold: 0.3
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, counterObserverOptions);
+
+        if (aboutSection) {
+            counterObserver.observe(aboutSection);
+        }
