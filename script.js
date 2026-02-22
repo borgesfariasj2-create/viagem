@@ -49,3 +49,23 @@
                 header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
             }
         });
+
+        // Avião animado - aparece após 2 segundos e repete a cada 25 segundos
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const airplane = document.getElementById('airplane');
+                if (airplane) {
+                    airplane.style.opacity = '1';
+                }
+            }, 2000);
+        });
+
+        // Loop da animação do avião
+        setInterval(function() {
+            const airplane = document.getElementById('airplane');
+            if (airplane) {
+                airplane.style.animation = 'none';
+                airplane.offsetHeight; // Trigger reflow
+                airplane.style.animation = 'flyAcross 20s linear infinite';
+            }
+        }, 25000);

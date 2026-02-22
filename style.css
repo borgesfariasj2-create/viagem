@@ -5,9 +5,15 @@
         }
 
         :root {
-            --primary: #00B4D8;
-            --secondary: #0077B6;
-            --accent: #FF6B35;
+            /* Nova paleta de cores - Verde Militar, Bege e Laranja */
+            --military-green: #4B5320;
+            --military-green-light: #5C6B28;
+            --military-green-dark: #3A4118;
+            --beige: #E8DCC4;
+            --beige-light: #F5EFE0;
+            --beige-dark: #D4C4A8;
+            --orange: #FF6B35;
+            --orange-light: #FF8C5A;
             --dark: #1A1A2E;
             --light: #FFFFFF;
             --gray: #F8F9FA;
@@ -25,20 +31,19 @@
             overflow-x: hidden;
         }
 
-        /* Header */
+        /* Header - NOVO ESTILO Verde Militar e Bege */
         header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 5%;
+            background: var(--military-green);
+            padding: 10px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .logo {
@@ -47,13 +52,13 @@
             gap: 15px;
             font-weight: 700;
             font-size: 1.2rem;
-            color: var(--dark);
+            color: var(--beige);
         }
 
         .logo img {
-            height: 130px;
+            height: 100px;
             max-width: 100%;
-            margin: -15px 0;
+            margin: -10px 0;
         }
         
         header {
@@ -61,47 +66,51 @@
         }
 
         .logo span {
-            color: var(--primary);
+            color: var(--beige);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 20px;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 0.95rem;
+            color: var(--beige);
+            font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
             position: relative;
-            padding: 5px 0;
+            padding: 10px 15px;
+            background: rgba(232, 220, 196, 0.1);
+            border-radius: 8px;
         }
 
         nav a::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
+            bottom: 5px;
+            left: 15px;
             width: 0;
             height: 2px;
-            background: var(--primary);
+            background: var(--orange);
             transition: width 0.3s ease;
         }
 
         nav a:hover::after {
-            width: 100%;
+            width: calc(100% - 30px);
         }
 
         nav a:hover {
-            color: var(--primary);
+            color: var(--orange);
+            background: rgba(232, 220, 196, 0.2);
+            transform: translateY(-2px);
         }
 
         .cta-button {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
+            background: linear-gradient(135deg, var(--orange), var(--orange-light));
+            color: var(--beige);
             padding: 12px 30px;
             border: none;
             border-radius: 50px;
@@ -110,11 +119,12 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
         }
 
         /* Hero Section */
@@ -328,7 +338,7 @@
 
         /* Benefits Section */
         .benefits {
-            background: linear-gradient(135deg, var(--dark) 0%, #16213E 100%);
+            background: linear-gradient(135deg, var(--military-green-dark) 0%, var(--military-green) 100%);
             color: white;
         }
 
@@ -1064,4 +1074,349 @@
         .scroll-top:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 180, 216, 0.4);
+        }
+
+        /* ========== NOVOS EFEITOS E ANIMAÇÕES ========== */
+
+        /* Animação de Flutuação (Float) */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes float-slow {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        @keyframes float-rotate {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(0deg);
+            }
+            75% {
+                transform: translateY(-10px) rotate(-5deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        /* Elementos com flutuação */
+        .float-element {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .float-slow {
+            animation: float-slow 4s ease-in-out infinite;
+        }
+
+        .float-rotate {
+            animation: float-rotate 5s ease-in-out infinite;
+        }
+
+        /* Animação do Avião voando */
+        @keyframes flyAcross {
+            0% {
+                transform: translateX(-100vw) translateY(50px) rotate(5deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100vw) translateY(-50px) rotate(-5deg);
+                opacity: 0;
+            }
+        }
+
+        .airplane {
+            position: fixed;
+            font-size: 3rem;
+            color: var(--orange);
+            z-index: 999;
+            animation: flyAcross 20s linear infinite;
+            opacity: 0;
+            pointer-events: none;
+            filter: drop-shadow(0 5px 15px rgba(255, 107, 53, 0.5));
+        }
+
+        .airplane::after {
+            content: '✈️';
+        }
+
+        /* Animação de Pulsar */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 20px rgba(255, 107, 53, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Efeitos Hover Melhorados */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(75, 83, 32, 0.2);
+        }
+
+        /* Card com brilho */
+        .glow-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 107, 53, 0.1) 50%,
+                transparent 70%
+            );
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .glow-card:hover::before {
+            animation: shine 0.5s ease;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
+        }
+
+        /* Ícone de Mala - Decorative */
+        .luggage-icon {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Efeito de Sombra Colorida */
+        .colored-shadow {
+            transition: all 0.3s ease;
+        }
+
+        .colored-shadow:hover {
+            box-shadow: 0 15px 40px rgba(75, 83, 32, 0.3);
+        }
+
+        /* Botões com efeito de gradiente animado */
+        .gradient-btn {
+            background: linear-gradient(45deg, var(--military-green), var(--orange), var(--military-green-light));
+            background-size: 200% 200%;
+            animation: gradientMove 3s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Efeito de Bordeurel colorida */
+        .colored-border {
+            position: relative;
+        }
+
+        .colored-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--military-green), var(--orange), var(--beige));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .colored-border:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Quick Links com novo estilo militar */
+        .quick-link-card {
+            border-left: 4px solid var(--military-green);
+        }
+
+        .quick-link-card:hover {
+            border-left-color: var(--orange);
+        }
+
+        .quick-link-card i {
+            color: var(--military-green);
+        }
+
+        .quick-link-card:hover i {
+            color: var(--orange);
+        }
+
+        /* Section Benefits - Novo estilo */
+        .benefits {
+            background: linear-gradient(135deg, var(--military-green-dark) 0%, var(--military-green) 100%);
+        }
+
+        .benefit-card i {
+            color: var(--orange);
+        }
+
+        .benefit-card:hover {
+            border-color: var(--orange);
+        }
+
+        /* Parks Section - Novo estilo */
+        .parks {
+            background: linear-gradient(135deg, var(--military-green), var(--military-green-light));
+        }
+
+        .park-card {
+            border: 2px solid rgba(232, 220, 196, 0.3);
+        }
+
+        .park-card:hover {
+            border-color: var(--orange);
+            background: rgba(255, 107, 53, 0.2);
+        }
+
+        /* Promo banner */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--orange), var(--orange-light));
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Points Section - Novo estilo */
+        .points {
+            background: linear-gradient(135deg, var(--military-green), var(--beige));
+        }
+
+        .point-card .icon {
+            background: linear-gradient(135deg, var(--orange), var(--orange-light));
+        }
+
+        /* Payment highlight */
+        .payment-highlight {
+            background: linear-gradient(135deg, var(--military-green), var(--military-green-light));
+        }
+
+        /* Footer */
+        footer {
+            background: var(--military-green-dark);
+        }
+
+        .footer-section h3 {
+            color: var(--beige);
+        }
+
+        .footer-section a:hover {
+            color: var(--orange);
+        }
+
+        /* Scroll to top - Novo estilo */
+        .scroll-top {
+            background: var(--military-green);
+        }
+
+        .scroll-top:hover {
+            background: var(--orange);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Badges e discounts */
+        .resort-badge,
+        .promo-discount {
+            background: linear-gradient(135deg, var(--orange), var(--orange-light));
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Hero Section - Atualizar cores */
+        .hero {
+            background: linear-gradient(135deg, rgba(75, 83, 32, 0.9), rgba(75, 83, 32, 0.8)),
+                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920') center/cover;
+        }
+
+        /* Decorative elements */
+        .decoration-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 107, 53, 0.1);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Efeito de texto brilhante */
+        .shimmer-text {
+            background: linear-gradient(
+                90deg,
+                var(--beige) 0%,
+                var(--orange) 50%,
+                var(--beige) 100%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% center;
+            }
+            100% {
+                background-position: 200% center;
+            }
         }
