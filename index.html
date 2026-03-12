@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ptbr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Rhotas Turismo - PHD Sports | Viagens Exclusivas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
         <!-- Header -->
-    <header>
+<header>
         <div class="logo">
             <img src="assets/Logo Rhotas Bege .png" alt="Rhotas Turismo">
             <img src="assets/Logo_PHD_VETOR.png" alt="PHD Sports" class="phd-logo">
         </div>
+        <button class="mobile-menu-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -35,18 +41,17 @@
 
 <!-- Hero Section -->
     <section class="hero" id="home">
-        <!-- Ícones Flutuantes de Turismo -->
-        <span class="luggage-icon float-slow" style="position: absolute; top: 20%; left: 5%; font-size: 2rem; z-index: 998;">🧳</span>
-        <span class="luggage-icon float" style="position: absolute; top: 40%; right: 8%; font-size: 2.5rem; z-index: 998;">✈️</span>
-        <span class="luggage-icon float-rotate" style="position: absolute; bottom: 20%; left: 10%; font-size: 2rem; z-index: 998;">🌴</span>
         <div class="hero-content">
-            <div class="hero-badge float-element">🎉 Exclusivo para Colaboradores PHD Sports & Franqueados</div>
-            <h1>Você trabalha. <span class="shimmer-text">Você conquista.</span> Você viaja. 🧳✈️</h1>
+            <div class="hero-badge float-element">Exclusivo para Colaboradores PHD Sports & Franqueados</div>
+            <h1>Você trabalha. <span class="shimmer-text">Você conquista.</span> Você viaja.</h1>
             <p>Agora você tem acesso a um dos maiores plataformas de turismo corporativo do Brasil. Prepare-se para viajar mais, pagar menos e viver experiências incríveis.</p>
             <div class="hero-buttons">
                 <a href="#beneficios" class="cta-button pulse">Conheça seus Benefícios</a>
                 <a href="#resorts" class="btn-secondary">Ver Destinos</a>
             </div>
+        </div>
+        <div class="hero-image">
+<img src="assets/avião.png" alt="Avião" loading="lazy">
         </div>
     </section>
 
@@ -93,7 +98,7 @@
         <div class="about-content">
             <div class="about-image">
                 <div class="logo-showcase">
-                    <img src="assets/logobegeSimbolo.png" alt="Logo Rhotas" class="rhotas-logo-png">
+            <img src="assets/logobegeSimbolo.png" alt="Logo Rhotas" class="rhotas-logo-png" loading="lazy">
                 </div>
             </div>
             <div class="about-text">
@@ -181,7 +186,25 @@
         </div>
         <div class="resorts-grid">
             <div class="resort-card">
-                <div class="resort-image" style="background-image: url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600');">
+                <div class="resort-carousel">
+                    <div class="carousel-slides">
+                        <div class="carousel-slide active" style="background-image: url('assets/r1.webp');"></div>
+                        <div class="carousel-slide" style="background-image: url('assets/r2.webp');"></div>
+                        <div class="carousel-slide" style="background-image: url('assets/r3.webp');"></div>
+                        <div class="carousel-slide" style="background-image: url('assets/r4.webp');"></div>
+                        <div class="carousel-slide" style="background-image: url('assets/r5.webp');"></div>
+                        <div class="carousel-slide" style="background-image: url('assets/r6.webp');"></div>
+                        <div class="carousel-slide" style="background-image: url('assets/r7.webp');"></div>
+                    </div>
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active" data-index="0"></span>
+                        <span class="carousel-dot" data-index="1"></span>
+                        <span class="carousel-dot" data-index="2"></span>
+                        <span class="carousel-dot" data-index="3"></span>
+                        <span class="carousel-dot" data-index="4"></span>
+                        <span class="carousel-dot" data-index="5"></span>
+                        <span class="carousel-dot" data-index="6"></span>
+                    </div>
                     <span class="resort-badge">Destaque</span>
                 </div>
                 <div class="resort-info">
@@ -193,7 +216,21 @@
                 </div>
             </div>
             <div class="resort-card">
-                <div class="resort-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600');">
+<div class="resort-carousel">
+                    <div class="carousel-slides">
+                        <div class="carousel-slide active" style="background-image: url('assets/r11.jpg');"></div>
+                        <div class="carousel-slide" style="background-image: url('assets/r12.jpg');"></div>
+                        <div class="carousel-slide" style="background-image: url('assets/r13.jpg');"></div>
+                        <div class="carousel-slide" style="background-image: url('assets/r14.jpg');"></div>
+                        <div class="carousel-slide" style="background-image: url('assets/r15.jpg');"></div>
+                    </div>
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active" data-index="0"></span>
+                        <span class="carousel-dot" data-index="1"></span>
+                        <span class="carousel-dot" data-index="2"></span>
+                        <span class="carousel-dot" data-index="3"></span>
+                        <span class="carousel-dot" data-index="4"></span>
+                    </div>
                     <span class="resort-badge">Popular</span>
                 </div>
                 <div class="resort-info">
@@ -205,7 +242,7 @@
                 </div>
             </div>
             <div class="resort-card">
-                <div class="resort-image" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600');">
+                <div class="resort-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600');">
                     <span class="resort-badge">Novo</span>
                 </div>
                 <div class="resort-info">
@@ -217,7 +254,7 @@
                 </div>
             </div>
             <div class="resort-card">
-                <div class="resort-image" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600');">
+                <div class="resort-image" style="background-image: url('https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=600');">
                     <span class="resort-badge">Top</span>
                 </div>
                 <div class="resort-info">
@@ -229,7 +266,7 @@
                 </div>
             </div>
             <div class="resort-card">
-                <div class="resort-image" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600');">
+                <div class="resort-image" style="background-image: url('https://images.unsplash.com/photo-1566501206188-5dd0cf160a0e?w=600');">
                     <span class="resort-badge">Favorito</span>
                 </div>
                 <div class="resort-info">
@@ -241,7 +278,7 @@
                 </div>
             </div>
             <div class="resort-card">
-                <div class="resort-image" style="background-image: url('https://images.unsplash.com/photo-1561501900-3701fa6a0864?w=600');">
+                <div class="resort-image" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600');">
                     <span class="resort-badge">Perto do Beto Carrero</span>
                 </div>
                 <div class="resort-info">
@@ -263,7 +300,7 @@
         </div>
         <div class="promo-grid">
             <div class="promo-card">
-                <div class="promo-image" style="background-image: url('https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?w=600');">
+                <div class="promo-image" style="background-image: url('https://images.unsplash.com/photo-1596436174051-41dfa2e4c607?w=600');">
                     <span class="promo-discount">-30%</span>
                 </div>
                 <div class="promo-content">
@@ -279,7 +316,7 @@
                 </div>
             </div>
             <div class="promo-card">
-                <div class="promo-image" style="background-image: url('https://images.unsplash.com/photo-1596436174051-41dfa2e4c607?w=600');">
+                <div class="promo-image" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600');">
                     <span class="promo-discount">-72%</span>
                 </div>
                 <div class="promo-content">
@@ -295,7 +332,7 @@
                 </div>
             </div>
             <div class="promo-card">
-                <div class="promo-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600');">
+                <div class="promo-image" style="background-image: url('https://images.unsplash.com/photo-1551913902-c92207136625?w=600');">
                     <span class="promo-discount">-75%</span>
                 </div>
                 <div class="promo-content">
@@ -311,7 +348,7 @@
                 </div>
             </div>
             <div class="promo-card">
-                <div class="promo-image" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600');">
+                <div class="promo-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600');">
                     <span class="promo-discount">-44%</span>
                 </div>
                 <div class="promo-content">

@@ -1,1498 +1,1062 @@
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            /* Nova paleta de cores - #2F4F3E, #F5F5DC e Laranja */
-            --primary: #2F4F3E;
-            --primary-light: #3D6350;
-            --primary-dark: #1F3A2E;
-            --secondary: #F5F5DC;
-            --secondary-light: #FAF8F0;
-            --secondary-dark: #E8E4CE;
-            --orange: #FF6B35;
-            --orange-light: #FF8C5A;
-            --dark: #1A1A2E;
-            --light: #FFFFFF;
-            --gray: #F8F9FA;
-            --gold: #FFD700;
-            
-            /* Mantendo compatibilidade com variáveis antigas */
-            --military-green: #2F4F3E;
-            --military-green-light: #3D6350;
-            --military-green-dark: #1F3A2E;
-            --beige: #F5F5DC;
-            --beige-light: #FAF8F0;
-            --beige-dark: #E8E4CE;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Header - NOVO ESTILO Verde Militar e Bege */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--military-green);
-            padding: 10px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--beige);
-        }
-
-        .logo img {
-            height: 80px;
-            max-width: 100%;
-            margin: -10px 0;
-        }
-        
-        header {
-            padding: 5px 5%;
-        }
-
-        .logo span {
-            color: var(--beige);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--beige);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 10px 15px;
-            background: rgba(232, 220, 196, 0.1);
-            border-radius: 8px;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 15px;
-            width: 0;
-            height: 2px;
-            background: var(--orange);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: calc(100% - 30px);
-        }
-
-        nav a:hover {
-            color: var(--orange);
-            background: rgba(232, 220, 196, 0.2);
-            transform: translateY(-2px);
-        }
-
-.cta-button {
-            background: linear-gradient(135deg, var(--orange), var(--orange-light));
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
-        }
-
-        /* Hero Section */
-.hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, rgba(47, 79, 62, 0.85), rgba(47, 79, 62, 0.7)),
-                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 5% 50px;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            color: white;
-        }
-
-        .hero-badge {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-            display: inline-block;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            opacity: 0.95;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-.btn-secondary:hover {
-            background: var(--military-green);
-            color: white;
-        }
-
-        /* Quick Links */
-        .quick-links {
-            background: white;
-            padding: 40px 5%;
-            margin-top: -50px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .quick-links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-.quick-link-card {
-            background: #F5F5DC;
-            padding: 25px 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: #2F4F3E;
-        }
-
-        .quick-link-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 180, 216, 0.2);
-        }
-
-        .quick-link-card i {
-            font-size: 2rem;
-            color: #2F4F3E;
-            margin-bottom: 15px;
-        }
-
-        .quick-link-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #2F4F3E;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 100px 5%;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-
-        .section-header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .section-header .accent {
-            color: var(--primary);
-        }
-
-        /* About Section */
-        .about {
-            background: var(--gray);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .about-image {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 400px;
-            background: linear-gradient(135deg, var(--military-green) 0%, var(--military-green-light) 100%);
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .logo-showcase {
-            text-align: center;
-            padding: 40px;
-        }
-
-        .rhotas-logo-about {
-            max-width: 350px;
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 3px solid var(--primary);
-            border-radius: 20px;
-            z-index: -1;
-        }
-
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .about-text p {
-            color: #555;
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .about-feature {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .about-feature i {
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        /* Benefits Section */
-        .benefits {
-            background: linear-gradient(135deg, var(--military-green-dark) 0%, var(--military-green) 100%);
-            color: white;
-        }
-
-        .benefits .section-header h2 {
-            color: white;
-        }
-
-        .benefits .section-header p {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 35px;
-            transition: all 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-10px);
-        }
-
-        .benefit-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        .benefit-card p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-        }
-
-        /* Resorts Section */
-        .resorts {
-            background: white;
-        }
-
-        .resorts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .resort-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .resort-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .resort-image {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .resort-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--accent);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .resort-info {
-            padding: 25px;
-        }
-
-        .resort-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .resort-info .location {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .resort-prices {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-        }
-
-        .price-old {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 0.9rem;
-        }
-
-        .price-new {
-            color: var(--primary);
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-
-        /* Promotions Carousel */
-        .promotions {
-            background: var(--gray);
-        }
-
-        .promo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .promo-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .promo-card:hover {
-            transform: scale(1.02);
-        }
-
-        .promo-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .promo-discount {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--accent);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .promo-content {
-            padding: 25px;
-        }
-
-        .promo-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .promo-prices {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin: 15px 0;
-        }
-
-        .promo-prices .original {
-            font-size: 0.9rem;
-            color: #999;
-            text-decoration: line-through;
-        }
-
-        .promo-prices .exclusive {
-            font-size: 1.3rem;
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .promo-details {
-            font-size: 0.85rem;
-            color: #666;
-            background: var(--gray);
-            padding: 10px;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-
-        /* Parks Section */
-        .parks {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-        }
-
-        .parks .section-header h2 {
-            color: white;
-        }
-
-        .parks-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .park-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            min-height: 200px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .park-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .park-card i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .park-card h3 {
-            font-size: 1.1rem;
-        }
-
-        /* Park overlay styles */
-        .park-overlay {
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
-            width: 100%;
-            padding: 30px 20px 20px;
-            border-radius: 0 0 20px 20px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-
-        .park-overlay h3 {
-            color: white;
-            font-size: 1.4rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            margin: 0;
-        }
-
-        .promo-banner {
-            background: var(--accent);
-            color: white;
-            padding: 20px 40px;
-            border-radius: 15px;
-            text-align: center;
-            margin-top: 50px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .promo-banner h3 {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-
-        /* Excursions Section */
-        .excursions {
-            background: white;
-        }
-
-        .excursion-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .excursion-image {
-            height: 500px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-        }
-
-        .excursion-features {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .excursion-feature {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .excursion-feature i {
-            font-size: 2rem;
-            color: var(--primary);
-            background: rgba(0, 180, 216, 0.1);
-            padding: 15px;
-            border-radius: 15px;
-        }
-
-        .excursion-feature h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .excursion-feature p {
-            color: #666;
-        }
-
-        /* Points Program */
-        .points {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: var(--dark);
-        }
-
-        .points .section-header h2 {
-            color: var(--dark);
-        }
-
-        .points-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .point-card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .point-card .icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
-
-        .point-card .icon i {
-            font-size: 2rem;
-            color: white;
-        }
-
-        .point-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        .point-card ul {
-            list-style: none;
-            text-align: left;
-        }
-
-        .point-card li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .point-card li i {
-            color: var(--primary);
-        }
-
-        /* How to Pay */
-        .payment {
-            background: var(--gray);
-        }
-
-        .payment-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .payment-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .payment-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .payment-card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .payment-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .payment-card p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .payment-highlight {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            grid-column: 1 / -1;
-        }
-
-        .payment-highlight h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        /* Who Can Use */
-        .eligibility {
-            background: white;
-        }
-
-        .eligibility-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .eligibility-card {
-            background: var(--gray);
-            border-radius: 20px;
-            padding: 35px;
-            text-align: center;
-        }
-
-        .eligibility-card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .eligibility-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        .eligibility-card ul {
-            list-style: none;
-            text-align: left;
-        }
-
-        .eligibility-card li {
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .eligibility-card li i {
-            font-size: 1rem;
-            margin: 0;
-        }
-
-        /* Partners Section */
-        .partners {
-            background: var(--dark);
-            color: white;
-        }
-
-        .partners .section-header h2 {
-            color: white;
-        }
-
-        .partners-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .partner-logo {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px 40px;
-            border-radius: 15px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .partner-logo:hover {
-            background: var(--primary);
-            transform: scale(1.05);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary), var(--secondary)),
-                        url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920') center/cover;
-            padding: 100px 5%;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(47, 79, 62, 0.8);
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .cta-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-content p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.95;
-        }
-
-        .cta-form {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-form input {
-            padding: 18px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            width: 350px;
-            max-width: 100%;
-        }
-
-        .cta-form button {
-            background: var(--accent);
-            color: white;
-            padding: 18px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .cta-form button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 60px 5% 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1400px;
-            margin: 0 auto 40px;
-        }
-
-        .footer-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .footer-section p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 10px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--primary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .about-content,
-            .excursion-content {
-                grid-template-columns: 1fr;
-            }
-
-            .about-image,
-            .excursion-image {
-                order: -1;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            nav ul {
-                display: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .quick-links-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .resorts-grid,
-            .promo-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        /* Scroll to top */
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--primary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-
-        .scroll-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 180, 216, 0.4);
-        }
-
-        /* ========== NOVOS EFEITOS E ANIMAÇÕES ========== */
-
-        /* Animação de Flutuação (Float) */
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        @keyframes float-slow {
-            0% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(5deg);
-            }
-            100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-        }
-
-        @keyframes float-rotate {
-            0% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            25% {
-                transform: translateY(-10px) rotate(5deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(0deg);
-            }
-            75% {
-                transform: translateY(-10px) rotate(-5deg);
-            }
-            100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-        }
-
-        /* Elementos com flutuação */
-        .float-element {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .float-slow {
-            animation: float-slow 4s ease-in-out infinite;
-        }
-
-        .float-rotate {
-            animation: float-rotate 5s ease-in-out infinite;
-        }
-
-        /* Animação do Avião voando */
-        @keyframes flyAcross {
-            0% {
-                transform: translateX(-100vw) translateY(50px) rotate(5deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateX(100vw) translateY(-50px) rotate(-5deg);
-                opacity: 0;
-            }
-        }
-
-.airplane {
-            position: fixed;
-            font-size: 3rem;
-            color: var(--orange);
-            z-index: 999;
-            animation: flyAcross 20s linear infinite;
-            opacity: 1;
-            pointer-events: none;
-            filter: drop-shadow(0 5px 15px rgba(255, 107, 53, 0.5));
-        }
-
-        .airplane::after {
-            content: '✈️';
-        }
-
-        /* Animação de Pulsar */
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
-            }
-            70% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 20px rgba(255, 107, 53, 0);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
-            }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        /* Efeitos Hover Melhorados */
-        .hover-lift {
-            transition: all 0.3s ease;
-        }
-
-        .hover-lift:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(75, 83, 32, 0.2);
-        }
-
-        /* Card com brilho */
-        .glow-card {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent 30%,
-                rgba(255, 107, 53, 0.1) 50%,
-                transparent 70%
-            );
-            transform: rotate(45deg);
-            transition: all 0.5s ease;
-            opacity: 0;
-        }
-
-        .glow-card:hover::before {
-            animation: shine 0.5s ease;
-        }
-
-        @keyframes shine {
-            0% {
-                transform: translateX(-100%) rotate(45deg);
-            }
-            100% {
-                transform: translateX(100%) rotate(45deg);
-            }
-        }
-
-        /* Ícone de Mala - Decorative */
-        .luggage-icon {
-            display: inline-block;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        /* Efeito de Sombra Colorida */
-        .colored-shadow {
-            transition: all 0.3s ease;
-        }
-
-        .colored-shadow:hover {
-            box-shadow: 0 15px 40px rgba(75, 83, 32, 0.3);
-        }
-
-        /* Botões com efeito de gradiente animado */
-        .gradient-btn {
-            background: linear-gradient(45deg, var(--military-green), var(--orange), var(--military-green-light));
-            background-size: 200% 200%;
-            animation: gradientMove 3s ease infinite;
-        }
-
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        /* Efeito de Bordeurel colorida */
-        .colored-border {
-            position: relative;
-        }
-
-        .colored-border::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--military-green), var(--orange), var(--beige));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .colored-border:hover::after {
-            transform: scaleX(1);
-        }
-
-        /* Quick Links com novo estilo militar */
-        .quick-link-card {
-            border-left: 4px solid var(--military-green);
-        }
-
-        .quick-link-card:hover {
-            border-left-color: var(--orange);
-        }
-
-        .quick-link-card i {
-            color: var(--military-green);
-        }
-
-        .quick-link-card:hover i {
-            color: var(--orange);
-        }
-
-        /* Section Benefits - Novo estilo */
-        .benefits {
-            background: linear-gradient(135deg, var(--military-green-dark) 0%, var(--military-green) 100%);
-        }
-
-        .benefit-card i {
-            color: var(--orange);
-        }
-
-        .benefit-card:hover {
-            border-color: var(--orange);
-        }
-
-        /* Parks Section - Novo estilo */
-        .parks {
-            background: linear-gradient(135deg, var(--military-green), var(--military-green-light));
-        }
-
-        .park-card {
-            border: 2px solid rgba(232, 220, 196, 0.3);
-        }
-
-        .park-card:hover {
-            border-color: var(--orange);
-            background: rgba(255, 107, 53, 0.2);
-        }
-
-        /* Promo banner */
-        .promo-banner {
-            background: linear-gradient(135deg, var(--orange), var(--orange-light));
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
-        }
-
-        /* Points Section - Novo estilo */
-        .points {
-            background: linear-gradient(135deg, var(--military-green), var(--beige));
-        }
-
-        .point-card .icon {
-            background: linear-gradient(135deg, var(--orange), var(--orange-light));
-        }
-
-        /* Payment highlight */
-        .payment-highlight {
-            background: linear-gradient(135deg, var(--military-green), var(--military-green-light));
-        }
-
-        /* Footer */
-        footer {
-            background: var(--military-green-dark);
-        }
-
-        .footer-section h3 {
-            color: var(--beige);
-        }
-
-        .footer-section a:hover {
-            color: var(--orange);
-        }
-
-        /* Scroll to top - Novo estilo */
-        .scroll-top {
-            background: var(--military-green);
-        }
-
-        .scroll-top:hover {
-            background: var(--orange);
-            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.4);
-        }
-
-        /* Badges e discounts */
-        .resort-badge,
-        .promo-discount {
-            background: linear-gradient(135deg, var(--orange), var(--orange-light));
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-        }
-
-        /* Hero Section - Atualizar cores */
-        .hero {
-            background: linear-gradient(135deg, rgba(75, 83, 32, 0.9), rgba(75, 83, 32, 0.8)),
-                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920') center/cover;
-        }
-
-        /* Decorative elements */
-        .decoration-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 107, 53, 0.1);
-            animation: float 4s ease-in-out infinite;
-        }
-
-        /* Efeito de texto brilhante */
-        .shimmer-text {
-            background: linear-gradient(
-                90deg,
-                var(--beige) 0%,
-                var(--orange) 50%,
-                var(--beige) 100%
-            );
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shimmer 3s linear infinite;
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: 0% center;
-            }
-            100% {
-                background-position: 200% center;
-            }
-        }
-
-
-
-.logo .phd-logo {
-    height: 70px;
-    margin-left: 10px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.rhotas-logo-png {
-    max-width: 350px;
+:root {
+    --primary: #2F4F3E;
+    --primary-light: #3D6350;
+    --primary-dark: #1F3A2E;
+    --secondary: #F5F5DC;
+    --secondary-light: #FAF8F0;
+    --secondary-dark: #E8E4CE;
+    --orange: #FF6B35;
+    --orange-light: #FF8C5A;
+    --dark: #1A1A2E;
+    --light: #FFFFFF;
+    --gray: #F8F9FA;
+    --gold: #FFD700;
+    --military-green: #2F4F3E;
+    --military-green-light: #3D6350;
+    --military-green-dark: #1F3A2E;
+    --beige: #F5F5DC;
+    --beige-light: #FAF8F0;
+    --beige-dark: #E8E4CE;
+}
+
+html { 
+    scroll-behavior: smooth; 
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+    font-size: clamp(0.95rem, 2vw, 1rem);
+}
+
+/* Header - Mobile First */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--military-green);
+    padding: clamp(8px, 2vw, 12px) clamp(16px, 5vw, 5%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    height: clamp(60px, 12vw, 80px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 2vw, 15px);
+}
+
+.logo img {
+    height: clamp(40px, 10vw, 60px);
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.logo img:first-child { height: clamp(50px, 12vw, 70px); }
+.logo .phd-logo { height: clamp(35px, 8vw, 50px); margin-left: clamp(4px, 1vw, 8px); }
+
+.mobile-menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: clamp(8px, 2vw, 12px);
+    z-index: 1001;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: clamp(20px, 5vw, 25px);
+    height: 3px;
+    background: var(--beige);
+    margin: clamp(3px, 1vw, 5px) 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+.mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: clamp(280px, 80vw, 350px);
+    height: 100vh;
+    background: var(--military-green);
+    padding: clamp(80px, 20vh, 100px) clamp(24px, 6vw, 30px) clamp(40px, 10vh, 50px);
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    overflow-y: auto;
+}
+
+nav.active { right: 0; }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 3vw, 18px);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--beige);
+    font-weight: 600;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    padding: clamp(16px, 4vw, 20px) clamp(20px, 5vw, 24px);
+    background: rgba(232, 220, 196, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    display: block;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+nav a:hover {
+    color: var(--orange);
+    background: rgba(232, 220, 196, 0.25);
+    transform: translateX(8px);
+}
+
+.cta-button {
+    background: linear-gradient(135deg, var(--orange), var(--orange-light));
+    color: white;
+    padding: clamp(12px, 3vw, 16px) clamp(24px, 6vw, 32px);
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+    min-height: 48px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
+}
+
+/* Hero Section */
+.hero {
+    min-height: clamp(100vh, 120vh, 100vh);
+    background: linear-gradient(135deg, rgba(47, 79, 62, 0.9), rgba(47, 79, 62, 0.75)),
+                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920') center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: clamp(120px, 25vh, 150px) clamp(16px, 8vw, 5%) clamp(40px, 10vh, 60px);
+    position: relative;
+    gap: clamp(24px, 6vw, 40px);
+}
+
+.hero-content {
+    max-width: min(90vw, 700px);
+    color: white;
+    flex: 1;
     width: 100%;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: min(90vw, 450px);
+}
+
+.hero-image img {
+    max-width: 100%;
     height: auto;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+    max-height: clamp(200px, 40vw, 350px);
+    object-fit: contain;
     animation: float 4s ease-in-out infinite;
 }
 
-/* Logo sizes adjustment */
-.logo > img:first-child {
-    height: 100px;
+.hero-badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    padding: clamp(8px, 2vw, 12px) clamp(20px, 4vw, 24px);
+    border-radius: 50px;
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+    margin-bottom: clamp(16px, 4vw, 24px);
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Header adjustment for larger logo */
-header {
-    padding: 8px 5%;
+.hero h1 { 
+    font-size: clamp(1.8rem, 6vw, 3rem); 
+    font-weight: 800; 
+    margin-bottom: clamp(12px, 3vw, 20px); 
+    line-height: 1.15; 
+}
+
+.hero h1 span { color: var(--gold); }
+
+.hero p { 
+    font-size: clamp(1rem, 2.5vw, 1.25rem); 
+    margin-bottom: clamp(24px, 6vw, 36px); 
+    opacity: 0.95;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 3vw, 20px);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: clamp(12px, 3vw, 14px) clamp(24px, 6vw, 28px);
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.btn-secondary:hover { 
+    background: rgba(255,255,255,0.15); 
+    transform: translateY(-2px);
+}
+
+/* Quick Links */
+.quick-links {
+    background: white;
+    padding: clamp(24px, 8vw, 40px) clamp(16px, 5vw, 5%);
+    margin-top: clamp(-30px, -8vh, -50px);
+    position: relative;
+    z-index: 10;
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(140px, 22vw, 200px), 1fr));
+    gap: clamp(12px, 3vw, 20px);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.quick-link-card {
+    background: var(--beige);
+    padding: clamp(16px, 4vw, 24px);
+    border-radius: clamp(12px, 3vw, 16px);
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--military-green);
+    min-height: clamp(100px, 20vw, 140px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+.quick-link-card i { 
+    font-size: clamp(1.4rem, 4vw, 2rem); 
+    color: var(--military-green); 
+    margin-bottom: clamp(8px, 2vw, 12px); 
+}
+
+.quick-link-card h3 { 
+    font-size: clamp(0.85rem, 2.2vw, 1rem); 
+    font-weight: 600; 
+    color: var(--military-green);
+    line-height: 1.3;
+}
+
+/* Section Styles - Mobile First */
+section { 
+    padding: clamp(40px, 12vh, 100px) clamp(16px, 8vw, 5%); 
+}
+
+.section-header {
+    text-align: center;
+    max-width: clamp(90%, 800px, 90%);
+    margin: 0 auto clamp(32px, 8vh, 60px);
+}
+
+.section-header h2 { 
+    font-size: clamp(1.6rem, 5vw, 2.8rem); 
+    font-weight: 700; 
+    margin-bottom: clamp(8px, 2vw, 16px); 
+    color: var(--dark);
+    line-height: 1.2;
+}
+
+.section-header p { 
+    color: #666; 
+    font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+}
+
+/* About Section */
+.about { background: var(--gray); }
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(32px, 8vw, 60px);
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(250px, 50vh, 400px);
+    background: linear-gradient(135deg, var(--military-green) 0%, var(--military-green-light) 100%);
+    border-radius: clamp(16px, 4vw, 20px);
+
+.resort-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); }
+
+.resort-image {
+    aspect-ratio: 4 / 3;
+    height: clamp(200px, 40vw, 280px);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.resort-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.resort-info { padding: 25px; }
+.resort-info h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--dark); }
+.resort-info .location { color: #888; font-size: 0.9rem; margin-bottom: 15px; display: flex; align-items: center; gap: 5px; }
+
+.resort-prices {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.price-old { text-decoration: line-through; color: #999; font-size: 0.9rem; }
+.price-new { color: var(--primary); font-size: 1.4rem; font-weight: 700; }
+
+/* Carousel Styles for Ondas Praia Resort */
+.resort-carousel {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    height: clamp(200px, 40vw, 280px);
+    overflow: hidden;
+}
+
+.carousel-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active { opacity: 1; }
+
+.carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.carousel-dot:hover { background: rgba(255, 255, 255, 0.9); transform: scale(1.2); }
+.carousel-dot.active { background: var(--orange); border-color: white; transform: scale(1.2); }
+
+.resort-carousel .resort-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+/* Promotions */
+.promotions { background: var(--gray); }
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.promo-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.promo-card:hover { transform: scale(1.02); }
+
+.promo-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.promo-discount {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--accent);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.promo-content { padding: 25px; }
+.promo-content h3 { font-size: 1.2rem; margin-bottom: 10px; }
+
+.promo-prices { display: flex; flex-direction: column; gap: 8px; margin: 15px 0; }
+.promo-prices .original { font-size: 0.9rem; color: #999; text-decoration: line-through; }
+.promo-prices .exclusive { font-size: 1.3rem; color: var(--primary); font-weight: 700; }
+
+.promo-details {
+    font-size: 0.85rem;
+    color: #666;
+    background: var(--gray);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Parks Section */
+.parks {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+.parks .section-header h2 { color: white; }
+
+.parks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.park-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.park-card:hover { transform: translateY(-10px); }
+.park-card i { font-size: 3rem; margin-bottom: 15px; }
+.park-card h3 { font-size: 1.1rem; }
+
+.park-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+    width: 100%;
+    padding: 30px 20px 20px;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.park-overlay h3 { color: white; font-size: 1.4rem; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin: 0; }
+
+.promo-banner {
+    background: var(--accent);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.promo-banner h3 { font-size: 1.5rem; margin-bottom: 5px; }
+
+/* Excursions Section */
+.excursions { background: white; }
+
+.excursion-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.excursion-image {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+.excursion-features { display: flex; flex-direction: column; gap: 25px; }
+
+.excursion-feature { display: flex; align-items: flex-start; gap: 20px; }
+.excursion-feature i { font-size: 2rem; color: var(--primary); background: rgba(0,180,216,0.1); padding: 15px; border-radius: 15px; }
+.excursion-feature h3 { font-size: 1.2rem; margin-bottom: 5px; }
+.excursion-feature p { color: #666; }
+
+/* Points Program */
+.points {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: var(--dark);
+}
+
+.points .section-header h2 { color: var(--dark); }
+
+.points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.point-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.point-card .icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.point-card .icon i { font-size: 2rem; color: white; }
+.point-card h3 { font-size: 1.3rem; margin-bottom: 15px; }
+.point-card ul { list-style: none; text-align: left; }
+.point-card li { padding: 8px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
+.point-card li i { color: var(--primary); }
+
+/* How to Pay */
+.payment { background: var(--gray); }
+
+.payment-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.payment-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.payment-card:hover { transform: translateY(-10px); }
+.payment-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+.payment-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+.payment-card p { color: #666; margin-bottom: 20px; }
+
+.payment-highlight {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.payment-highlight h3 { font-size: 2rem; margin-bottom: 10px; }
+
+/* Who Can Use */
+.eligibility { background: white; }
+
+.eligibility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.eligibility-card {
+    background: var(--gray);
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+}
+
+.eligibility-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+.eligibility-card h3 { font-size: 1.3rem; margin-bottom: 15px; }
+.eligibility-card ul { list-style: none; text-align: left; }
+.eligibility-card li { padding: 10px 0; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 10px; }
+.eligibility-card li i { font-size: 1rem; margin: 0; }
+
+/* Partners Section */
+.partners { background: var(--dark); color: white; }
+.partners .section-header h2 { color: white; }
+
+.partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partner-logo {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px 40px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover { background: var(--primary); transform: scale(1.05); }
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary), var(--secondary)),
+                url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920') center/cover;
+    padding: 100px 5%;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(47, 79, 62, 0.8);
+}
+
+.cta-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+.cta-content h2 { font-size: 2.5rem; margin-bottom: 20px; }
+.cta-content p { font-size: 1.2rem; margin-bottom: 40px; opacity: 0.95; }
+
+.cta-form { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+.cta-form input {
+    padding: 18px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    width: 350px;
+    max-width: 100%;
+}
+
+.cta-form button {
+    background: var(--accent);
+    color: white;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-form button:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4); }
+
+/* Footer */
+footer { background: var(--dark); color: white; padding: 60px 5% 30px; }
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto 40px;
+}
+
+.footer-section h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--primary); }
+.footer-section p { color: rgba(255, 255, 255, 0.7); margin-bottom: 10px; }
+.footer-section ul { list-style: none; }
+.footer-section li { margin-bottom: 10px; }
+.footer-section a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color 0.3s ease; }
+.footer-section a:hover { color: var(--primary); }
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate { animation: fadeInUp 0.6s ease forwards; }
+
+/* Scroll to top */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.scroll-top.active { opacity: 1; visibility: visible; }
+.scroll-top:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,180,216,0.4); }
+
+/* Float Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes float-slow {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float-rotate {
+    0% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(5deg); }
+    50% { transform: translateY(-20px) rotate(0deg); }
+    75% { transform: translateY(-10px) rotate(-5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.float-element { animation: float 3s ease-in-out infinite; }
+.float-slow { animation: float-slow 4s ease-in-out infinite; }
+.float-rotate { animation: float-rotate 5s ease-in-out infinite; }
+
+/* Airplane Animation */
+@keyframes flyAcross {
+    0% { transform: translateX(-100vw) translateY(50px) rotate(5deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateX(100vw) translateY(-50px) rotate(-5deg); opacity: 0; }
+}
+
+.airplane {
+    position: fixed;
+    font-size: 3rem;
+    color: var(--orange);
+    z-index: 999;
+    animation: flyAcross 20s linear infinite;
+    opacity: 1;
+    pointer-events: none;
+    filter: drop-shadow(0 5px 15px rgba(255, 107, 53, 0.5));
+}
+
+.airplane::after { content: '✈️'; }
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(255, 107, 53, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
+}
+
+.pulse { animation: pulse 2s infinite; }
+
+/* Shimmer Text */
+.shimmer-text {
+    background: linear-gradient(90deg, var(--beige) 0%, var(--orange) 50%, var(--beige) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Logo Styles */
+.logo .phd-logo { height: 70px; margin-left: 10px; }
+.rhotas-logo-png { max-width: 350px; width: 100%; height: auto; filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3)); animation: float 4s ease-in-out infinite; }
+.logo > img:first-child { height: 100px; }
+header { padding: 8px 5%; align-items: center; }
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--beige);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+.mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+/* Responsive - Mobile */
+@media (max-width: 992px) {
+    .mobile-menu-btn { display: block; }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--military-green);
+        padding: 80px 30px 30px;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+    }
+
+    nav.active { right: 0; }
+    nav ul { display: flex; flex-direction: column; gap: 15px; }
+    nav a { display: block; padding: 15px 20px; font-size: 1.1rem; }
+    .cta-button, header .cta-button { display: none; }
+
+    .hero { padding: 120px 5% 50px; min-height: auto; }
+    .hero h1 { font-size: 1.8rem; line-height: 1.3; }
+    .hero p { font-size: 0.95rem; margin-bottom: 25px; }
+    .hero-badge { font-size: 0.75rem; padding: 8px 18px; }
+
+    .hero-buttons { flex-direction: column; gap: 15px; }
+    .hero-buttons .cta-button, .hero-buttons .btn-secondary { width: 100%; text-align: center; }
+
+    .quick-links { padding: 30px 5%; margin-top: -30px; }
+    .quick-links-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .quick-link-card { padding: 15px 10px; }
+    .quick-link-card h3 { font-size: 0.85rem; }
+    .quick-link-card i { font-size: 1.5rem; margin-bottom: 10px; }
+
+    section { padding: 60px 5%; }
+    .section-header { margin-bottom: 40px; }
+    .section-header h2 { font-size: 1.6rem; }
+    .section-header p { font-size: 0.95rem; }
+
+    .about-content { gap: 30px; }
+    .about-image { min-height: 250px; }
+    .about-text h3 { font-size: 1.5rem; }
+    .about-text p { font-size: 0.95rem; }
+    .about-features { grid-template-columns: 1fr; gap: 12px; }
+    .rhotas-logo-about, .rhotas-logo-png { max-width: 200px; }
+
+    .benefits-grid { grid-template-columns: 1fr; gap: 20px; }
+    .benefit-card { padding: 25px 20px; }
+    .benefit-card i { font-size: 2rem; }
+    .benefit-card h3 { font-size: 1.1rem; }
+
+    .resorts-grid { grid-template-columns: 1fr; gap: 20px; }
+    .resort-card { border-radius: 15px; }
+    .resort-image { height: 180px; }
+    .resort-info { padding: 20px; }
+    .resort-info h3 { font-size: 1.1rem; }
+
+    .promo-grid { grid-template-columns: 1fr; gap: 20px; }
+    .promo-image { height: 150px; }
+    .promo-content { padding: 20px; }
+
+    .parks-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .park-card { min-height: 120px; border-radius: 15px; }
+    .park-overlay { padding: 15px 10px 10px; }
+    .park-overlay h3 { font-size: 0.9rem; }
+    .promo-banner { padding: 15px 20px; margin-top: 30px; }
+    .promo-banner h3 { font-size: 1.1rem; }
+    .promo-banner p { font-size: 0.85rem; }
+
+    .excursion-content { gap: 30px; }
+    .excursion-image { height: 250px; border-radius: 15px; }
+    .excursion-feature { gap: 15px; }
+    .excursion-feature i { font-size: 1.5rem; padding: 12px; }
+    .excursion-feature h3 { font-size: 1rem; }
+    .excursion-feature p { font-size: 0.9rem; }
+
+    .points-grid { grid-template-columns: 1fr; gap: 20px; }
+    .point-card { padding: 25px 20px; }
+    .point-card .icon { width: 60px; height: 60px; }
+    .point-card .icon i { font-size: 1.5rem; }
+
+    .payment-content { grid-template-columns: 1fr; gap: 25px; }
+    .payment-card { padding: 25px 20px; }
+    .payment-card i { font-size: 2rem; }
+    .payment-card h3 { font-size: 1.2rem; }
+    .payment-highlight { padding: 25px 20px; }
+    .payment-highlight h3 { font-size: 1.3rem; }
+
+    .eligibility-grid { grid-template-columns: 1fr; gap: 20px; }
+    .eligibility-card { padding: 25px 20px; }
+    .eligibility-card i { font-size: 2rem; }
+    .eligibility-card h3 { font-size: 1.1rem; }
+
+    .partners-grid { gap: 15px; }
+    .partner-logo { padding: 15px 25px; font-size: 0.9rem; }
+
+    .cta-section { padding: 60px 5%; }
+    .cta-content h2 { font-size: 1.6rem; }
+    .cta-content p { font-size: 0.95rem; }
+    .cta-form { flex-direction: column; }
+    .cta-form input, .cta-form button { width: 100%; }
+
+    .footer-content { grid-template-columns: 1fr; gap: 30px; }
+    .footer-section h3 { font-size: 1.1rem; }
+    .footer-bottom { font-size: 0.85rem; }
+
+    .logo img { height: 50px; }
+    .logo .phd-logo { height: 40px; margin-left: 5px; }
+    header { padding: 5px 5%; }
+
+    .scroll-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+    .airplane { font-size: 2rem; }
+}
+
+/* Very Small Mobile */
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.5rem; }
+    .quick-links-grid { grid-template-columns: 1fr; }
+    .parks-grid { grid-template-columns: 1fr; }
+    .logo img { height: 40px; }
+    .logo .phd-logo { display: none; }
+    .logo span { font-size: 1rem; }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero h1 { font-size: 2.2rem; }
+    .quick-links-grid { grid-template-columns: repeat(4, 1fr); }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .resorts-grid { grid-template-columns: repeat(2, 1fr); }
+    .parks-grid { grid-template-columns: repeat(3, 1fr); }
 }

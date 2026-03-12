@@ -1,3 +1,80 @@
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('nav');
+    
+    if (mobileMenuBtn && nav) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenuBtn.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        nav.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileMenuBtn.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenuBtn.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+    }
+    
+    // Carousel for Ondas Praia Resort
+    const carouselContainer = document.querySelector('.resort-carousel');
+    if (carouselContainer) {
+        const slides = carouselContainer.querySelectorAll('.carousel-slide');
+        const dots = carouselContainer.querySelectorAll('.carousel-dot');
+        let currentSlide = 0;
+        const slideInterval = 3000; // 3 seconds
+        
+        function showSlide(index) {
+            slides.forEach(function(slide) {
+                slide.classList.remove('active');
+            });
+            dots.forEach(function(dot) {
+                dot.classList.remove('active');
+            });
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Auto slide
+        let slideTimer = setInterval(nextSlide, slideInterval);
+        
+        // Dot click handlers
+        dots.forEach(function(dot, index) {
+            dot.addEventListener('click', function() {
+                clearInterval(slideTimer);
+                currentSlide = index;
+                showSlide(currentSlide);
+                slideTimer = setInterval(nextSlide, slideInterval);
+            });
+        });
+        
+        // Pause on hover
+        carouselContainer.addEventListener('mouseenter', function() {
+            clearInterval(slideTimer);
+        });
+        
+        carouselContainer.addEventListener('mouseleave', function() {
+            slideTimer = setInterval(nextSlide, slideInterval);
+        });
+    }
+});
+
 // Scroll to top button
         window.addEventListener('scroll', function() {
             const scrollTop = document.querySelector('.scroll-top');
